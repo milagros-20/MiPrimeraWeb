@@ -109,6 +109,7 @@ img {
 
 .submenu #carrito {
     display: none;
+    text-align: center;
 }
 
 .submenu:hover #carrito {
@@ -124,7 +125,6 @@ img {
     min-width: 400px;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-
 }
 
 table {
@@ -423,7 +423,7 @@ th, td {
 
 
 .submenu:hover #carrito {
-    min-width: 100%;
+    width: 100px;
 }
 
 .header {
@@ -438,6 +438,7 @@ th, td {
 .header-img {
     display: block;
     width: 60%;
+    padding-top: 80px;
 }
 
 .header-txt {
@@ -607,3 +608,99 @@ fa-solid fa-magnifying-glass {
     }
 }
 
+.agregar-al-carrito {
+    transition: all 0.3s ease-in-out; /* add transition effect */
+  }
+  
+  .agregar-al-carrito:hover {
+    transform: scale(1.1); /* scale up on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add box shadow on hover */
+  }
+  
+  .agregar-al-carrito.clicked {
+    animation: bounce 0.5s ease-in-out; /* trigger bounce animation on click */
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+#mi-carrito {
+    font-size: 20px;
+    background-color: #e8eff7;
+}
+
+#iniciar-compra {
+    background-color: #25d366;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 18px;
+    width: 50%;
+    height: 30px;
+    margin: 20px;
+}
+
+#vaciar-carrito {
+    background-color: #91bdf0;
+    margin: 15px;
+}
+
+#total-carrito {
+    font-weight: bold;
+}
+
+@media (max-width:991px) {
+    #vaciar-carrito {
+        color: #000000;
+        background-color: #91bdf0;
+        margin: 15px;
+}
+
+#iniciar-compra {
+    background-color: #25d366;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 18px;
+    width: 70%;
+    height: 30px;
+    margin: 20px;
+}
+
+.menu-horizontal li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+  }
+  
+  .menu-horizontal li:hover ul {
+    display: block;
+  }
+
+  .animacion {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .animacion:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+}
+
+.animacion {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .animacion:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
