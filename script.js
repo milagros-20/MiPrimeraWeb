@@ -3,6 +3,7 @@ const totalCarrito = document.querySelector('#carrito #total-carrito');
 const elementos1 = document.getElementById('lista-1');
 const lista = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
+const iniciarCompraButton = document.getElementById('iniciar-compra');
 
 cargarEventListeners();
 
@@ -125,3 +126,14 @@ function cargarCarritoDesdeLocalStorage() {
 
 // Call cargarCarritoDesdeLocalStorage when the page loads
 document.addEventListener('DOMContentLoaded', cargarCarritoDesdeLocalStorage);
+
+const agregarAlCarritoButtons = document.querySelectorAll('.agregar-al-carrito');
+
+agregarAlCarritoButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    button.classList.add('clicked'); /* add clicked class to trigger animation */
+    setTimeout(() => {
+      button.classList.remove('clicked'); /* remove clicked class after animation finishes */
+    }, 500); /* wait for 500ms (duration of animation) */
+  });
+});
