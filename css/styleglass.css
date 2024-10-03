@@ -824,9 +824,7 @@ right: 30px;
     margin-bottom: 20px;
   }
   
-  .quantity {
-    margin-bottom: 10px;
-  }
+  
   
   button {
     background-color: gold; /* Or your desired button color */
@@ -842,20 +840,283 @@ right: 30px;
   }
 
 .images-container {
-    display: flex;
-   justify-content: center;
+   display: flex;
+   justify-content: left;
    align-items: center;
    margin: 20px;
   }
 
 .images-container img {
     margin: 5px; /* adjust margin as needed */
-    width: 23%; /* adjust width as needed */
+    width: 35%; /* adjust width as needed */
     height: auto;
+    
 }
 
 .glass {
-    margin-left: 61px;
+    margin-top: 40px;
+    margin-left: 145px;
     font-family: 'Lilita One', sans-serif;
+    font-size: 25px;
+}
+
+.quantity {
+    text-align: right;
+  }
+
+#precioglass {
+    margin-top: 20px;
+}
+
+.containerglass {
+    display: flex;
+    padding: 30px;
+}
+.image-section {
+    flex: 1;
+}
+.image-section img {
+    width: 100%;
+    max-width: 500px;
+    margin-left: 150px;
+}
+.details-section {
+    flex: 1;
+    padding-left: 20px;
+}
+.breadcrumb {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+.breadcrumb a {
+    color: #666;
+    text-decoration: none;
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+.product-title {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.product-price {
     font-size: 30px;
+    color: #000;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.payment-options {
+    font-size: 14px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+.quantity-section {
+    margin-bottom: 20px;
+}
+.quantity-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+.quantity-section input {
+    width: 50px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px #000;
+}
+.add-to-cart-btn {
+    background-color: #ffdd00;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.add-to-cart-btn:hover {
+    background-color: #fae880;
+}
+
+.filtro {
+    margin-bottom: 20px;
+  }
+  
+  .filtro select {
+    width: 50%;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  .cantidad {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cantidad input {
+    width: 50px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .cantidad button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cantidad button:hover {
+    background-color: #3e8e41;
+  }
+
+.modelos button {
+    background-color: #007bff;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 19px;
+    margin: 5px;
+}
+
+.modelos button:hover {
+    background-color: #bdb8b8;
+    color: #000;
+}
+
+
+@media (max-width:991px) {
+.containerglass {
+    display: block;
+}
+.image-section {
+    flex: 1;
+}
+.image-section img {
+    width: 350px;
+    height: 350px;
+    display: block;
+    margin: 0 auto !important;
+}
+.details-section {
+    flex: 1;
+    padding-left: 10px;
+}
+.breadcrumb {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+.breadcrumb a {
+    color: #666;
+    text-decoration: none;
+}
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+.product-title {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+.product-price {
+    font-size: 30px;
+    color: #000;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.payment-options {
+    font-size: 14px;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+.quantity-section {
+    margin-bottom: 20px;
+}
+.quantity-section label {
+    display: block;
+    margin-bottom: 5px;
+}
+.quantity-section input {
+    width: 50px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px #000;
+}
+.add-to-cart-btn {
+    background-color: #ffdd00;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.add-to-cart-btn:hover {
+    background-color: #fae880;
+}
+
+.filtro {
+    margin-bottom: 20px;
+  }
+  
+  .filtro select {
+    width: 50%;
+    height: 50px;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  
+  .cantidad {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cantidad input {
+    width: 50px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .cantidad button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cantidad button:hover {
+    background-color: #3e8e41;
+  }
+
+.modelos button {
+    background-color: #007bff;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 19px;
+    margin: 5px;
+}
+
+.modelos button:hover {
+    background-color: #bdb8b8;
+    color: #000;
+}
 }
