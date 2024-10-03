@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidrios</title>
+    <link rel="stylesheet" href="css/styleglass.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coiny&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a77589d46e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://api.whatsapp.com/send?phone=3764695748&text=Hola!!%20Me%20gustaria%20saber%20m%C3%A1s%20informaci%C3%B3n%20de%20este%20producto" class="float pulse" target="_blank">
+    <i class="fa fa-whatsapp my-float"></i>
+    </a>
+
+    <header class="header">
+        <div class="menu container">
+            <img src="images/logo.milu.cases.orig.jpg"  width="100px" class="logo" alt=""></a>
+            <input type="checkbox" id="menu"/>
+            <label for="menu">
+                <img id="ham" src="images/hamburgermenu_120234.svg" class="menu-icono" alt="menu">
+            </label>
+
+            <nav class="navbar">
+            <ul class="menu-horizontal">
+                <li><a href="index.html">Inicio</a></li>
+                <li>
+                    <a href="#"">Productos</a>
+                    <ul class="menu-vertical">
+                    <li><a href="productos.html">Fundas</a></li>
+                    <li><a href="vidrios.html">Vidrios</a></li>
+                    <li><a href="#">Straps</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Servicios</a></li>
+
+                <li><a href="#">¿Cómo comprar?</a></li>
+            </ul>
+        </nav>
+
+        <div class="fondo">
+            <input type="text" placeholder="Buscar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        
+
+        <div>
+            <ul>
+                <li class="submenu">
+                    <img src="images/car.svg" id="img-carrito" alt="carrito">
+                    <div id="carrito">
+                        <h2>Carrito</h2>
+                        <table id="lista-carrito">
+                          <thead>
+                            <tr>
+                              <th>Imagen</th>
+                              <th>Nombre</th>
+                              <th>Precio</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                        <p id="total-carrito">Total: $0</p>
+                        <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
+                      </div>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </header>
+    
+    <div class="containerglass">
+        <div class="image-section">
+         <img alt="Vidrio templado 9D" src="images/vidrios/1.jpg"/>
+        </div>
+        <div class="details-section">
+            <div class="modelos">
+        <button id="glassamsung" >SAMSUNG</button>
+        <button>MOTOROLA</button>
+        <button>XIAOMI</button>
+        <button>IPHONE</button>
+    </div>
+         <div class="product-title">
+          Vidrio templado 9D
+         </div>
+         
+
+         <div class="product-price">
+          $2.500
+         </div>
+         <div class="payment-options">
+          EFECTIVO/TRANSFERENCIA
+         </div>
+
+         <div class="filtro">
+            <select id="filtro-opciones">
+                <option value="" disabled selected >Seleccione el modelo</option>
+              <option value="opcion1">Samsung A03</option>
+              <option value="opcion2">Samsung A04</option>
+              <option value="opcion3">Samsung A04e</option>
+              <option value="opcion4">Samsung A05</option>
+              <option value="opcion5">Samsung A05s</option>
+              <option value="opcion6">Samsung A12</option>
+              <option value="opcion7">Samsung A13/A23</option>
+              <option value="opcion8">Samsung A14</option>
+              <option value="opcion9">Samsung A15</option>
+              <option value="opcion10">Samsung A21s</option>
+              <option value="opcion11">Samsung A22 4G</option>
+              <option value="opcion12">Samsung A22 5G</option>
+              <option value="opcion13">Samsung A24</option>
+              <option value="opcion14">Samsung A25</option>
+              <option value="opcion15">Samsung A31</option>
+              <option value="opcion16">Samsung A32</option>
+              <option value="opcion17">Samsung A33 5G</option>
+              <option value="opcion18">Samsung A34</option>
+              <option value="opcion19">Samsung A51</option>
+              <option value="opcion20">Samsung A52</option>
+              <option value="opcion21">Samsung A53</option>
+              <option value="opcion22">Samsung A54</option>
+              <option value="opcion23">Samsung A70</option>
+              <option value="opcion24">Samsung A71</option>
+              <option value="opcion25">Samsung A72</option>
+              <option value="opcion26">Samsung S20 FE</option>
+            </select>
+          </div>
+
+         <div class="quantity-section">
+          <label for="quantity">
+           Cantidad
+          </label>
+          <input id="quantity" min="1" name="quantity" type="number" value="1"/>
+         </div>
+         <button class="add-to-cart-btn">
+          Agregar al carrito
+         </button>
+        </div>
+       </div>
+
+    <footer class="footer">
+
+        <div class="footer-content container">
+    
+    <div class="link">
+        <h3>Medios de Pago</h3>
+        <ul>
+            <li id="mp"><img src="images/mp.png" width="100px" alt=""></li>
+            <li id="bank"><img src="images/bank_PNG3.png" width="50px" alt=""></li>
+        </ul>
+    </div>
+    
+    <div class="link">
+        <h3>Medios de envio</h3>
+        <ul>
+            <li id="correoar"><img src="images/logo-correo-argentino-png.png" width="100px" alt=""></li>
+        </ul>
+    </div>
+    
+    <div class="link">
+        <h3>Redes sociales</h3>
+        <ul>
+            <li id="ico" ><img src="images/whatsapp.svg" width="25px" alt=""></li>
+            <li id="ico" ><img src="images/instagram.svg" width="25px" alt=""></li>
+            <li id="ico" ><img src="images/facebook.svg" width="25px" alt=""></li>
+        </ul>
+    </div>
+    
+    <div class="link">
+        <h3>Contacto</h3>
+        <ul>
+            <li><a href="#">marianayanuk2863@gmail.com</a></li>
+            <li><a href="#">3764-695748</a></li>
+            <li><a href="#">CERRO AZUL - MISIONES</a></li>
+        </ul>
+    </div>
+    
+        </footer>
+        
+        <script src="script2.js"></script>
+</body>
+</html>

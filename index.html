@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a77589d46e.js" crossorigin="anonymous"></script>
+    <script src="https://sdk.mercadopago.com/js/v2/security.js"></script>
 </head>
 <body> 
     
@@ -22,24 +23,24 @@
             <img src="images/logo.milu.cases.orig.jpg"  width="100px" class="logo" alt=""></a>
             <input type="checkbox" id="menu"/>
             <label for="menu">
-                <img src="images/hamburgermenu_120234.svg" class="menu-icono" alt="menu">
+                <img src="images/hamburgermenu_120234.svg" class="animacion" alt="menu">
             </label>
 
             <nav class="navbar">
             <ul class="menu-horizontal">
-                <li><a href="index.html">Inicio</a></li>
-                <li>
+                <li class="animacion" ><a href="index.html">Inicio</a></li>
+                <li class="animacion" >
                     <a href="#"">Productos</a>
                     <ul class="menu-vertical">
                     <li><a href="productos.html">Fundas</a></li>
-                    <li><a href="#">Vidrios</a></li>
+                    <li><a href="vidrios.html">Vidrios</a></li>
                     <li><a href="#">Straps</a></li>
                     <li><a href="#">Accesorios</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Servicios</a></li>
+                <li class="animacion" ><a href="#">Servicios</a></li>
 
-                <li><a href="#">¿Cómo comprar?</a></li>
+                <li class="animacion" ><a href="#">¿Cómo comprar?</a></li>
             </ul>
         </nav>
 
@@ -57,6 +58,7 @@
                         <table id="lista-carrito">
                             <thead>
                                 <tr>
+                                    <h1 id="mi-carrito">Mi carrito</h1>
                                     <th>Imagen</th>
                                     <th>Nombre</th>
                                     <th>Precio</th>
@@ -67,6 +69,7 @@
                         </table>
                         <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
                         <p id="total-carrito">Total $0</p>
+                        <button id="iniciar-compra">Iniciar Compra</button>
                     </div>
                 </li>
             </ul>
@@ -132,7 +135,7 @@
     <div class="product-text">
         <h3>Funda para Samsung A04 + strap</h3>
         <p>Modelos únicos en stock</p>
-        <p class="precio">$7800</p>
+        <p class="precio">$7800,00</p>
         <a href="#" class="agregar-al-carrito btn-2" data-id="1">Agregar al carrito</a>
     </div>
 </div>
@@ -142,7 +145,7 @@
     <div class="product-text">
         <h3>Strap Kirby</h3>
         <p>Modelo a pedido</p>
-        <p class="precio">$4500</p>
+        <p class="precio">$4500,00</p>
         <a href="#" class="agregar-al-carrito btn-2" data-id="2">Agregar al carrito</a>
     </div>
 </div>
@@ -152,7 +155,7 @@
     <div class="product-text">
         <h3>Strap simple ojo turco</h3>
         <p>Significado de inteligencia y protección</p>
-        <p class="precio">$1500</p>
+        <p class="precio">$1500,00</p>
         <a href="#" class="agregar-al-carrito btn-2" data-id="3">Agregar al carrito</a>
     </div>
 </div>
@@ -162,7 +165,7 @@
     <div class="product-text">
         <h3>Llaveros de palta</h3>
         <p>Últimas 2 unidades</p>
-        <p class="precio">$2000</p>
+        <p class="precio">$2000,00</p>
         <a href="#" class="agregar-al-carrito btn-2" data-id="4">Agregar al carrito</a>
     </div>
 </div>
@@ -172,7 +175,7 @@
     <div class="product-text">
         <h3>Strap Hello Kitty</h3>
         <p>Modelo único en stock</p>
-        <p class="precio">$4500</p>
+        <p class="precio">$4500,00</p>
         <a href="#" class="agregar-al-carrito btn-2" data-id="5">Agregar al carrito</a>
     </div>
 </div>
@@ -182,9 +185,8 @@
     <div class="product-text">
         <h3>Funda de motorola g10/g20/g30 + strap simple de corazones</h3>
         <p>Última unidad</p>
-        <p class="precio">$5500</p>
+        <p class="precio">$5500,00</p>
         <a href="#" class="agregar-al-carrito btn-2" data-id="6">Agregar al carrito</a>
-    </div>
 </div>
 </div>
 

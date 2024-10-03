@@ -21,26 +21,26 @@
             <img src="images/logo.milu.cases.orig.jpg"  width="100px" class="logo" alt=""></a>
             <input type="checkbox" id="menu"/>
             <label for="menu">
-                <img id="ham" src="images/hamburgermenu_120234.svg" class="menu-icono" alt="menu">
+                <img id="ham" src="images/hamburgermenu_120234.svg" class="animacion" alt="menu">
             </label>
 
             <nav class="navbar">
-            <ul class="menu-horizontal">
-                <li><a href="index.html">Inicio</a></li>
-                <li>
-                    <a href="#"">Productos</a>
-                    <ul class="menu-vertical">
-                    <li><a href="productos.html">Fundas</a></li>
-                    <li><a href="#">Vidrios</a></li>
-                    <li><a href="#">Straps</a></li>
-                    <li><a href="#">Accesorios</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Servicios</a></li>
-
-                <li><a href="#">¿Cómo comprar?</a></li>
-            </ul>
-        </nav>
+                <ul class="menu-horizontal">
+                    <li class="animacion" ><a href="index.html">Inicio</a></li>
+                    <li class="animacion" >
+                        <a href="#"">Productos</a>
+                        <ul class="menu-vertical">
+                        <li><a href="productos.html">Fundas</a></li>
+                        <li><a href="vidrios.html">Vidrios</a></li>
+                        <li><a href="#">Straps</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                        </ul>
+                    </li>
+                    <li class="animacion" ><a href="#">Servicios</a></li>
+    
+                    <li class="animacion" ><a href="#">¿Cómo comprar?</a></li>
+                </ul>
+            </nav>
 
         <div class="fondo">
             <input type="text" placeholder="Buscar">
@@ -53,25 +53,44 @@
                 <li class="submenu">
                     <img src="images/car.svg" id="img-carrito" alt="carrito">
                     <div id="carrito">
+                        <h2>Carrito</h2>
                         <table id="lista-carrito">
-                            <thead>
-                                <tr>
-                                    <th>Imagen</th>
-                                    <th>Nombre</th>
-                                    <th>Precio</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
+                          <thead>
+                            <tr>
+                              <th>Imagen</th>
+                              <th>Nombre</th>
+                              <th>Precio</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
                         </table>
                         <p id="total-carrito">Total: $0</p>
                         <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
-                    </div>
+                      </div>
                 </li>
             </ul>
         </div>
         </div>
     </header>
+    <div class="contenedoropt">
+        <select id="filtro" onchange="filtrarOpciones()">
+            <option value="" disabled selected>Filtrar</option>
+            <option value="opcion1">SAMSUNG</option>
+            <option value="opcion2">MOTOROLA</option>
+            <option value="opcion3">XIAOMI</option>
+            <option value="opcion4">IPHONE</option>
+            <option value="opcion5">Vidrios 9D</option>
+            <option value="opcion6">Llaveros</option>
+            <option value="opcion7">Correas</option>
+            <option value="opcion8">Stickers</option>
+            <option value="opcion9">Straps phone</option>
+            <option value="opcion10">Straps simples</option>
+            <option value="opcion11">Popsockets</option>
+        </select>
+        <div id="opciones">
+        </div>
+    </div>
     <div class="container">
         <div class="sidebar">
         <h2>
