@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vidrios</title>
-    <link rel="stylesheet" href="css/styleglass.css">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="css/styleservi.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
@@ -24,7 +24,6 @@
                 <img id="ham" src="images/hamburgermenu_120234.svg" class="animacion" alt="menu">
             </label>
 
-            
             <nav class="navbar">
                 <ul class="menu-horizontal">
                     <li class="animacion" ><a href="index.html">Inicio</a></li>
@@ -42,7 +41,7 @@
                     <li class="animacion" ><a href="#">¿Cómo comprar?</a></li>
                 </ul>
             </nav>
-            
+
         <div class="fondo">
             <input type="text" placeholder="Buscar">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -54,10 +53,10 @@
                 <li class="submenu">
                     <img src="images/car.svg" id="img-carrito" alt="carrito">
                     <div id="carrito">
-                        <h2>Carrito</h2>
                         <table id="lista-carrito">
                           <thead>
                             <tr>
+                                <h1 id="mi-carrito">Mi carrito</h1>
                               <th>Imagen</th>
                               <th>Nombre</th>
                               <th>Precio</th>
@@ -66,81 +65,56 @@
                           </thead>
                           <tbody></tbody>
                         </table>
-                        <p id="total-carrito">Total: $0</p>
                         <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
-                      </div>
+                        <p id="total-carrito">Total: $0</p>
+                        <button id="iniciar-compra">Iniciar Compra</button>
+                    </div>
                 </li>
             </ul>
         </div>
         </div>
     </header>
     
-    <div class="containerglass">
-        <div class="image-section">
-         <img alt="Vidrio templado 9D" src="images/vidrios/1.jpg"/>
+    <section class="h1-colocacion">
+        <i class="fa-solid fa-star"></i><h1>Colocación de vidrios templados</h1>
+    </section>
+
+    
+    <section class="blog container">
+
+        <div class="blog-1">
+            <img src="images/vidrios/2.jpg" alt="">
+            <h3>Diseño curvo</h3>
+            <p>
+                El diseño curvo se ajusta perfectamente 
+                a la pantalla del celular, lo que proporciona una experiencia de visualización más inmersiva y emocionante.
+
+            </p>
         </div>
-        <div class="details-section">
-            <div class="modelos">
-        <button id="glassamsung" >SAMSUNG</button>
-        <button>MOTOROLA</button>
-        <button>XIAOMI</button>
-        <button>IPHONE</button>
-    </div>
-         <div class="product-title">
-          Vidrio templado 9D
-         </div>
-         
 
-         <div class="product-price">
-          $2.500
-         </div>
-         <div class="payment-options">
-          EFECTIVO/TRANSFERENCIA
-         </div>
-
-         <div class="filtro">
-            <select id="filtro-opciones">
-                <option value="" disabled selected >Seleccione el modelo</option>
-              <option value="opcion1">Samsung A03</option>
-              <option value="opcion2">Samsung A04</option>
-              <option value="opcion3">Samsung A04e</option>
-              <option value="opcion4">Samsung A05</option>
-              <option value="opcion5">Samsung A05s</option>
-              <option value="opcion6">Samsung A12</option>
-              <option value="opcion7">Samsung A13/A23</option>
-              <option value="opcion8">Samsung A14</option>
-              <option value="opcion9">Samsung A15</option>
-              <option value="opcion10">Samsung A21s</option>
-              <option value="opcion11">Samsung A22 4G</option>
-              <option value="opcion12">Samsung A22 5G</option>
-              <option value="opcion13">Samsung A24</option>
-              <option value="opcion14">Samsung A25</option>
-              <option value="opcion15">Samsung A31</option>
-              <option value="opcion16">Samsung A32</option>
-              <option value="opcion17">Samsung A33 5G</option>
-              <option value="opcion18">Samsung A34</option>
-              <option value="opcion19">Samsung A51</option>
-              <option value="opcion20">Samsung A52</option>
-              <option value="opcion21">Samsung A53</option>
-              <option value="opcion22">Samsung A54</option>
-              <option value="opcion23">Samsung A70</option>
-              <option value="opcion24">Samsung A71</option>
-              <option value="opcion25">Samsung A72</option>
-              <option value="opcion26">Samsung S20 FE</option>
-            </select>
-          </div>
-
-         <div class="quantity-section">
-          <label for="quantity">
-           Cantidad
-          </label>
-          <input id="quantity" min="1" name="quantity" type="number" value="1"/>
-         </div>
-         <button class="add-to-cart-btn">
-          Agregar al carrito
-         </button>
+        <div class="blog-1">
+            <img src="images/vidrios/3.jpg">
+            <h3>Resistencia a rayones y golpes</h3>
+            <p>
+                La capa de vidrio del Glass 9D está templada para aumentar su resistencia a golpes y rayones.
+            </p>
         </div>
-       </div>
+
+        <div class="blog-1">
+            <img src="images/vidrios/4.jpg" alt="">
+            <h3>Transparencia alta</h3>
+            <p>
+                El Glass 9D tiene una transparencia del 99%,
+                lo que significa que no afecta la calidad de la imagen en la pantalla del celular.
+            </p>
+        </div>
+    </section>
+
+    <div class="section-email">
+        <span>Dejame tu email para recibir información!</span>
+        <input type="email" placeholder="Tu email" required>
+        <button>Enviar</button>
+</div>
 
     <footer class="footer">
 
