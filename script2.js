@@ -113,12 +113,13 @@ function vaciarCarrito() {
 function actualizarTotal() {
   let total = 0;
   cart.forEach((item) => {
-    const precio = parseFloat(item.precio.replace('.', '').replace(',', '.'));
+    const precio = item.precio.replace('$', '').replace('.', '').replace(',', '.');
     if (!isNaN(precio)) {
-      total += precio;
+      total += parseFloat(precio) / 1;
     }
   });
-  totalCarrito.textContent = `Total: $${total.toFixed(2)}`;
+  const totalFormateado = total.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2, style: 'currency', currency: 'ARS' });
+  totalCarrito.textContent = `Total: ${totalFormateado}`;
 }
 
 function cargarCarritoDesdeLocalStorage() {
