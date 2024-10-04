@@ -110,6 +110,7 @@ img {
 
 .submenu #carrito {
     display: none;
+    text-align: center;
 }
 
 .submenu:hover #carrito {
@@ -136,6 +137,31 @@ th, td {
     color: #020202;
     font-weight: bold;
     text-align: center;
+}
+
+
+#mi-carrito {
+    font-size: 20px;
+    background-color: #e8eff7;
+    text-align: center;
+}
+
+#iniciar-compra {
+    background-color: #25d366;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 18px;
+    width: 50%;
+    height: 30px;
+    margin: 20px;
+}
+
+#vaciar-carrito {
+    background-color: #91bdf0;
+    margin: 15px;
+}
+
+#total-carrito {
+    font-weight: bold;
 }
 
 .borrar {
@@ -840,6 +866,24 @@ right: 30px;
     cursor: pointer;
   }
 
-
-
 }
+
+.animacion {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .animacion:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+
+.animacion {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .animacion:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+

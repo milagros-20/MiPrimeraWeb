@@ -400,9 +400,10 @@ th, td {
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #C2D0ED;
+    background-color: #ffffff;
     display: none;
     border-radius: 30px;
+    box-shadow:  0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -412,7 +413,7 @@ th, td {
 
 .menu-horizontal li:hover .menu-vertical {
     display: block;
-    background-color: #C2D0ED;
+    background-color: #717ff7;
 }
 
 .menu-vertical li:hover {
@@ -1120,3 +1121,22 @@ right: 30px;
     color: #000;
 }
 }
+
+.animacion {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .animacion:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+
+.animacion {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .animacion:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
