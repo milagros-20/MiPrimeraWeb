@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milu Cases</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="scriptprueba.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a77589d46e.js" crossorigin="anonymous"></script>
-    <script src="https://sdk.mercadopago.com/js/v2/security.js"></script>
 </head>
 <body> 
     
@@ -20,7 +20,7 @@
 
     <header class="header">
         <div class="menu container">
-            <img src="images/logo.milu.cases.orig.jpg"  width="100px" class="logo" alt=""></a>
+            <img src="images/logo.milu.cases.orig.jpg"  width="100px" class="logo" alt="">
             <input type="checkbox" id="menu"/>
             <label for="menu">
                 <img src="images/hamburgermenu_120234.svg" class="animacion" alt="menu">
@@ -30,39 +30,41 @@
             <ul class="menu-horizontal">
                 <li class="animacion" ><a href="index.html">Inicio</a></li>
                 <li class="animacion" >
-                    <a href="#"">Productos</a>
+                    <a href="productos.html">Productos</a>
                     <ul class="menu-vertical">
                     <li><a href="productos.html">Fundas</a></li>
                     <li><a href="vidrios.html">Vidrios</a></li>
-                    <li><a href="#">Straps</a></li>
-                    <li><a href="#">Accesorios</a></li>
+                    <li><a href="/inicio/straps.html">Straps</a></li>
+                    <li><a href="popsockets.html">Popsockets</a></li>
+                    <li><a href="accesorios.html">Accesorios</a></li>
                     </ul>
                 </li>
                 <li class="animacion" ><a href="servicios.html">Servicios</a></li>
 
-                <li class="animacion" ><a href="#">¿Cómo comprar?</a></li>
+                <li class="animacion" ><a href="compra.html">¿Cómo comprar?</a></li>
             </ul>
         </nav>
 
+
         <div class="fondo">
-            <input type="text" placeholder="Buscar">
-        <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="inputBuscador" placeholder="Buscar">
+        <i class="fa-solid fa-magnifying-glass" onclick="buscar()" style="cursor: pointer;"></i>
         </div>
-        
+        <div class="resultados" id="resultados"></div>
 
         <div>
             <ul>
                 <li class="submenu">
                     <img src="images/car.svg" id="img-carrito" alt="carrito">
                     <div id="carrito">
+                        <h1 id="mi-carrito">Mi carrito</h1>
                         <table id="lista-carrito">
                             <thead>
                                 <tr>
-                                    <h1 id="mi-carrito">Mi carrito</h1>
                                     <th>Imagen</th>
                                     <th>Nombre</th>
                                     <th>Precio</th>
-                                    <th></th>
+                                    <th>Cantidad</th>
                                 </tr>
                             </thead>
                             <tbody></tbody>
@@ -74,17 +76,17 @@
                 </li>
             </ul>
         </div>
-        </div>
+    </div>
 
 
         <div class="header-content container">
             <div class="header-img">
-                <img src="images/fundas messi.jpg" alt="">
+                <img src="images/messi navidad.jpg" alt="">
             </div>
             <div class="header-txt">
                 <h1>Nuevos ingresos!!</h1>
                 <p>estrena las mejores fundas de Messi</p>
-                <a href="#" class="btn-1">Información</a>
+                <a href="inicio/informacion.html" class="btn-1">Información</a>
             </div>
         </div>
     </header>
@@ -96,7 +98,7 @@
             </div>
             <div class="ofert-txt">
                 <h3>Fundas de ositos con anillos</h3>
-                <a href="#" class="btn-2">Modelos disponibles</a>
+                <a href="/inicio/bearsrings.html" class="btn-2">Modelos disponibles</a>
             </div>
         </div>
 
@@ -106,7 +108,7 @@
             </div>
             <div class="ofert-txt">
                 <h3>Vidrios 9D</h3>
-                <a href="#" class="btn-2">Consultar</a>
+                <a href="vidrios.html" class="btn-2">Consultar</a>
             </div>
         </div>
 
@@ -116,7 +118,7 @@
             </div>
             <div class="ofert-txt">
                 <h3>Straps phone</h3>
-                <a href="#" class="btn-2">Ver más</a>
+                <a href="/inicio/straps.html" class="btn-2">Ver más</a>
             </div>
         </div>
         
@@ -126,7 +128,7 @@
 
     <main class="products container" id="lista-1">
 
-    <h2>Productos destacados</h2>
+    <h2>Productos destacados✨</h2>
 
     <div class="product-content">
 
@@ -135,8 +137,12 @@
     <div class="product-text">
         <h3>Funda para Samsung A04 + strap</h3>
         <p>Modelos únicos en stock</p>
-        <p class="precio">$7800,00</p>
-        <a href="#" class="agregar-al-carrito btn-2" data-id="1">Agregar al carrito</a>
+        <p class="precio">$7.800,00</p>
+        <a href="#" class="agregar-al-carrito btn-2" data-id="1" data-nombre="Funda para Samsung A04 + strap" data-precio="7800">Agregar al carrito
+            <span class="loadingText" style="display: none;">Cargando...</span>
+            <span class="tickIcon" style="display: none;">✔️</span>
+        </a>
+        
     </div>
 </div>
 
@@ -145,8 +151,11 @@
     <div class="product-text">
         <h3>Strap Kirby</h3>
         <p>Modelo a pedido</p>
-        <p class="precio">$4500,00</p>
-        <a href="#" class="agregar-al-carrito btn-2" data-id="2">Agregar al carrito</a>
+        <p class="precio">$4.500,00</p>
+        <a href="#" class="agregar-al-carrito btn-2" data-id="2" data-nombre="Strap Kirby" data-precio="4500">Agregar al carrito
+            <span class="loadingText" style="display: none;">Cargando...</span>
+            <span class="tickIcon" style="display: none;">✔️</span>
+        </a>
     </div>
 </div>
 
@@ -155,8 +164,11 @@
     <div class="product-text">
         <h3>Strap simple ojo turco</h3>
         <p>Significado de inteligencia y protección</p>
-        <p class="precio">$1500,00</p>
-        <a href="#" class="agregar-al-carrito btn-2" data-id="3">Agregar al carrito</a>
+        <p class="precio">$1.500,00</p>
+        <a href="#" class="agregar-al-carrito btn-2" data-id="3" data-nombre="Strap simple ojo turco" data-precio="1500">Agregar al carrito
+            <span class="loadingText" style="display: none;">Cargando...</span>
+            <span class="tickIcon" style="display: none;">✔️</span>
+        </a>
     </div>
 </div>
 
@@ -165,8 +177,11 @@
     <div class="product-text">
         <h3>Llaveros de palta</h3>
         <p>Últimas 2 unidades</p>
-        <p class="precio">$2000,00</p>
-        <a href="#" class="agregar-al-carrito btn-2" data-id="4">Agregar al carrito</a>
+        <p class="precio">$2.000,00</p>
+        <a href="#" class="agregar-al-carrito btn-2" data-id="4" data-nombre="Llaveros de palta" data-precio="2000">Agregar al carrito
+            <span class="loadingText" style="display: none;">Cargando...</span>
+            <span class="tickIcon" style="display: none;">✔️</span>
+        </a>
     </div>
 </div>
 
@@ -175,8 +190,11 @@
     <div class="product-text">
         <h3>Strap Hello Kitty</h3>
         <p>Modelo único en stock</p>
-        <p class="precio">$4500,00</p>
-        <a href="#" class="agregar-al-carrito btn-2" data-id="5">Agregar al carrito</a>
+        <p class="precio">$4.500,00</p>
+        <a href="#" class="agregar-al-carrito btn-2" data-id="5" data-nombre="Strap Hello Kitty" data-precio="4500">Agregar al carrito
+            <span class="loadingText" style="display: none;">Cargando...</span>
+            <span class="tickIcon" style="display: none;">✔️</span>
+        </a>
     </div>
 </div>
 
@@ -185,8 +203,11 @@
     <div class="product-text">
         <h3>Funda de motorola g10/g20/g30 + strap simple de corazones</h3>
         <p>Última unidad</p>
-        <p class="precio">$5500,00</p>
-        <a href="#" class="agregar-al-carrito btn-2" data-id="6">Agregar al carrito</a>
+        <p class="precio">$5.500,00</p>
+        <a href="#" class="agregar-al-carrito btn-2" data-id="6" data-nombre="Funda de motorola g10/g20/g30 + strap simple de corazones" data-precio="5500">Agregar al carrito
+            <span class="loadingText" style="display: none;">Cargando...</span>
+            <span class="tickIcon" style="display: none;">✔️</span>
+        </a>
 </div>
 </div>
 
@@ -237,7 +258,7 @@
             <img src="images/strapspersonalizados.jpg"">
             <h3>Straps personalizados</h3>
             <p>
-                "Dale un estilo único a tu celular. Nuevos strap phones que marcan tendencia".
+                Dale un estilo único a tu celular. Nuevos straps phones que marcan tendencia.
             </p>
         </div>
 
@@ -274,9 +295,12 @@
     <h3>Redes sociales</h3>
     <div class="redes-sociales">
     <ul>
-        <li id="ico" ><img src="images/whatsapp.svg" width="25px" alt=""></li>
+        <a href="https://www.instagram.com/milu_cases/">
         <li id="ico" ><img src="images/instagram.svg" width="25px" alt=""></li>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100081592280611&mibextid=JRoKGi">
         <li id="ico" ><img src="images/facebook.svg" width="25px" alt=""></li>
+        </a>
     </ul>
 </div>
 </div>
@@ -284,14 +308,15 @@
 <div class="link">
     <h3>Contacto</h3>
     <ul>
-        <li><a href="#">marianayanuk2863@gmail.com</a></li>
-        <li><a href="#">3764-695748</a></li>
-        <li><a href="#">CERRO AZUL - MISIONES</a></li>
+        <li><a>marianayanuk2863@gmail.com</a></li>
+        <li><a>3764-695748</a></li>
+        <li><a>CERRO AZUL - MISIONES</a></li>
     </ul>
 </div>
 
     </footer>
     
-    <script src="script.js"></script>
+    <script src="buscador.js"></script>
 </body>
 </html>
+

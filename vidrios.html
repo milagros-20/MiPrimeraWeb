@@ -34,6 +34,7 @@
                         <li><a href="productos.html">Fundas</a></li>
                         <li><a href="vidrios.html">Vidrios</a></li>
                         <li><a href="#">Straps</a></li>
+                        <li><a href="#">Popsockets</a></li>
                         <li><a href="#">Accesorios</a></li>
                         </ul>
                     </li>
@@ -49,30 +50,34 @@
         </div>
         
 
+        
         <div>
             <ul>
                 <li class="submenu">
                     <img src="images/car.svg" id="img-carrito" alt="carrito">
                     <div id="carrito">
-                        <h2>Carrito</h2>
                         <table id="lista-carrito">
-                          <thead>
-                            <tr>
-                              <th>Imagen</th>
-                              <th>Nombre</th>
-                              <th>Precio</th>
-                              <th></th>
-                            </tr>
-                          </thead>
-                          <tbody></tbody>
+                            <thead>
+                                <tr>
+                                    <h1 id="mi-carrito">Mi carrito</h1>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
                         </table>
-                        <p id="total-carrito">Total: $0</p>
                         <a href="#" id="vaciar-carrito" class="btn-2">Vaciar Carrito</a>
-                      </div>
+                        <p id="total-carrito">Total $0</p>
+                        <button id="iniciar-compra">Iniciar Compra</button>
+                    </div>
                 </li>
             </ul>
         </div>
         </div>
+
+
     </header>
     
     <div class="containerglass">
@@ -81,10 +86,10 @@
         </div>
         <div class="details-section">
             <div class="modelos">
-        <button id="glassamsung" >SAMSUNG</button>
-        <button>MOTOROLA</button>
-        <button>XIAOMI</button>
-        <button>IPHONE</button>
+            <a href="/glassmodelos/samsung.html" class="boton">SAMSUNG</a>
+            <a href="/glassmodelos/motorola.html" class="boton">MOTOROLA</a>
+            <a href="https://www.ejemplo.com" class="boton">XIAOMI</a>
+            <a href="https://www.ejemplo.com" class="boton">IPHONE</a>
     </div>
          <div class="product-title">
           Vidrio templado 9D
@@ -92,7 +97,7 @@
          
 
          <div class="product-price">
-          $2.500
+            $2.500,00
          </div>
          <div class="payment-options">
           EFECTIVO/TRANSFERENCIA
@@ -136,7 +141,7 @@
           </label>
           <input id="quantity" min="1" name="quantity" type="number" value="1"/>
          </div>
-         <button class="add-to-cart-btn">
+         <button class="add-to-cart-btn boton-agregar" >
           Agregar al carrito
          </button>
         </div>
@@ -163,24 +168,29 @@
     
     <div class="link">
         <h3>Redes sociales</h3>
+        <div class="redes-sociales">
         <ul>
-            <li id="ico" ><img src="images/whatsapp.svg" width="25px" alt=""></li>
+            <a href="https://www.instagram.com/milu_cases/">
             <li id="ico" ><img src="images/instagram.svg" width="25px" alt=""></li>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100081592280611&mibextid=JRoKGi">
             <li id="ico" ><img src="images/facebook.svg" width="25px" alt=""></li>
+            </a>
         </ul>
+    </div>
     </div>
     
     <div class="link">
         <h3>Contacto</h3>
         <ul>
-            <li><a href="#">marianayanuk2863@gmail.com</a></li>
-            <li><a href="#">3764-695748</a></li>
-            <li><a href="#">CERRO AZUL - MISIONES</a></li>
+            <li>marianayanuk2863@gmail.com</li>
+            <li>3764-695748</li>
+            <li>CERRO AZUL - MISIONES</a></li>
         </ul>
     </div>
     
         </footer>
         
-        <script src="script2.js"></script>
+        <script src="scriptprueba.js"></script>
 </body>
 </html>
