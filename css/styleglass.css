@@ -102,6 +102,7 @@ img {
     display: none;
 }
 
+
 .submenu {
     position: relative;
     cursor: pointer;
@@ -109,6 +110,9 @@ img {
 
 .submenu #carrito {
     display: none;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
 
 .submenu:hover #carrito {
@@ -124,11 +128,22 @@ img {
     min-width: 400px;
     border-radius: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
 
+#cantidad-carrito {
+    position: absolute;
+    left: 40px;
+    bottom: 15px;
+    background-color: #25d366;
+    width: 20px;
+    text-align: center;
+    border-radius: 20px;
 }
 
 table {
     width: 100%;
+    font-weight: bold;
+    color: #000000;
 }
 
 th, td {
@@ -145,6 +160,30 @@ th, td {
     color: #f5f5f5;
     font-weight: 800;
     cursor: pointer;
+}
+
+
+#mi-carrito {
+    font-size: 20px;
+    background-color: #e8eff7;
+}
+
+#iniciar-compra {
+    background-color: #25d366;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 18px;
+    width: 50%;
+    height: 30px;
+    margin: 20px;
+}
+
+#vaciar-carrito {
+    background-color: #91bdf0;
+    margin: 15px;
+}
+
+#total-carrito {
+    font-weight: bold;
 }
 
 .header-content {
@@ -827,14 +866,14 @@ right: 30px;
   
   
   
-  button {
+  button .add-to-cart-btn {
     background-color: gold; /* Or your desired button color */
     padding: 10px 20px;
     border: none;
     color: white;
     cursor: pointer;
   }
-  
+
   .shipping {
     font-size: smaller;
     margin-top: 10px;
@@ -1140,3 +1179,36 @@ right: 30px;
     transform: scale(1.1);
     cursor: pointer;
   }
+
+
+
+  .boton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    font-family: 'Lilita One', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.boton:hover {
+    background-color: #0056b3;
+}
+
+
+#samsungb {
+    background-color: #25d366;
+}
+
+#motorolab {
+    background-color: #25d366;
+}
+
+#xiaomib {
+    background-color: #25d366;
+}
+
+#iphoneb {
+    background-color: #25d366;
+}
