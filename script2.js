@@ -3,99 +3,91 @@ const lista = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
 const totalCarrito = document.getElementById('total-carrito');
 
-let cart = []; // Crear un array para almacenar el carrito
+let cart = []; // Arreglo para el carrito
 
 cargarEventListeners();
 
+// Cargar carrito desde localStorage al iniciar la página
+document.addEventListener('DOMContentLoaded', cargarCarritoDesdeLocalStorage);
+
 function cargarEventListeners() {
-  // Agregar evento click a cada botón "Eliminar"
   lista.addEventListener('click', eliminarElemento);
-
-  // Agregar evento click al botón "Vaciar carrito"
   vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
-}
 
-// Función para agregar producto al carrito y almacenar en localStorage
-function agregarAlCarrito(producto) {
-  // Obtener los datos del carrito actual
-  let carritoLocalStorage = JSON.parse(localStorage.getItem('carrito')) || [];
-
-  // Agregar el producto al carrito
-  carritoLocalStorage.push(producto);
-
-  // Guardar los datos del carrito en localStorage
-  localStorage.setItem('carrito', JSON.stringify(carritoLocalStorage));
-}
-
-// Función para obtener los datos del carrito de localStorage
-function obtenerCarrito() {
-  return JSON.parse(localStorage.getItem('carrito')) || [];
-}
-
-const productos = document.querySelectorAll('.product');
-
-productos.forEach((producto) => {
-  const botonAgregar = producto.querySelector('.agregar-al-carrito');
-  botonAgregar.addEventListener('click', (e) => {
-    e.preventDefault();
-    const elemento = producto;
-    const infoElemento = leerDatosElemento(elemento);
-
-    // Verificar si el producto ya está en el carrito
-    if (!cart.find((item) => item.id === infoElemento.id)) {
-      cart.push(infoElemento);
-      insertarCarrito(infoElemento);
-      agregarAlCarrito(infoElemento);
-    }
+  const productos = document.querySelectorAll('.product');
+  productos.forEach((producto) => {
+    const botonAgregar = producto.querySelector('.agregar-al-carrito');
+    botonAgregar.addEventListener('click', (e) => {
+      e.preventDefault();
+      agregarProductoAlCarrito(producto, botonAgregar);
+    });
   });
-});
+}
 
-function leerDatosElemento(elemento) {
-  const infoElemento = {
-    imagen: elemento.querySelector('img').src,
-    titulo: elemento.querySelector('h3').textContent,
-    precio: elemento.querySelector('.price').textContent,
-    id: elemento.querySelector('.agregar-al-carrito').getAttribute('data-id'),
-  };
-  return infoElemento;
+function agregarProductoAlCarrito(producto, botonAgregar) {
+  const infoElemento = leerDatosElemento(producto);
+
+  // Cambiar estado del botón a "Cargando..."
+  botonAgregar.textContent = '';
+  botonAgregar.classList.add('cargando');
+
+  setTimeout(() => {
+    // Verificar si el producto ya existe en el carrito
+    const existingProduct = cart.find((item) => item.id === infoElemento.id);
+
+    if (existingProduct) {
+      // Incrementar cantidad si ya existe
+      existingProduct.cantidad++;
+
+      // Actualizar la fila correspondiente en la tabla
+      const row = lista.querySelector(`.borrar[data-id="${infoElemento.id}"]`).parentElement.parentElement;
+      row.children[3].textContent = existingProduct.cantidad; // Actualizar cantidad en la fila
+    } else {
+      // Agregar nuevo producto con cantidad 1
+      infoElemento.cantidad = 1;
+      cart.push(infoElemento);
+      insertarCarrito(infoElemento); // Insertar nueva fila en el carrito
+    }
+
+    // Cambiar texto del botón a "✔" después de agregar
+    botonAgregar.textContent = ''; 
+    botonAgregar.classList.remove('cargando');
+    botonAgregar.classList.add('agregado');
+
+    setTimeout(() => {
+      botonAgregar.textContent = 'Agregar al carrito'; // Restablecer texto original
+      botonAgregar.classList.remove('agregado');
+    }, 1000);
+
+    actualizarTotal(); // Actualizar total del carrito
+    guardarCarritoEnLocalStorage(); // Guardar el carrito en localStorage
+  }, 1000); // Simulación de carga de 1 segundo
 }
 
 function insertarCarrito(elemento) {
   const row = document.createElement('tr');
   row.innerHTML = `
-    <td>
-      <img src="${elemento.imagen}" width=100 />
-    </td>
-    <td>
-      ${elemento.titulo}
-    </td>
-    <td>
-      ${elemento.precio}
-    </td>
-    <td>
-      <a href="#" class="borrar" data-id="${elemento.id}" >X </a>
-    </td>
+    <td><img src="${elemento.imagen}" width=100 /></td>
+    <td>${elemento.titulo}</td>
+    <td><strong>${elemento.precio}<strong></td>
+    <td>${elemento.cantidad}</td>
+    <td><a href="#" class="borrar" data-id="${elemento.id}">X</a></td>
   `;
-
   lista.appendChild(row);
-  actualizarTotal();
+  actualizarTotal(); // Actualizar total al insertar
 }
 
 function eliminarElemento(e) {
   e.preventDefault();
-  const elementoId = e.target.getAttribute('data-id');
-  const index = cart.findIndex((item) => item.id === elementoId);
-  if (index !== -1) {
-    cart.splice(index, 1);
-    e.target.parentElement.parentElement.remove();
-  }
-  actualizarTotal();
-  // Eliminar producto del carrito en localStorage
-  const carritoLocalStorage = obtenerCarrito();
-  const indice = carritoLocalStorage.findIndex(producto => producto.id === elementoId);
-  if (indice !== -1) {
-    carritoLocalStorage.splice(indice, 1);
-    localStorage.setItem('carrito', JSON.stringify(carritoLocalStorage));
+  if (e.target.classList.contains('borrar')) {
+    const elementoId = e.target.getAttribute('data-id'); // Comparar como string
+    const index = cart.findIndex((item) => item.id === elementoId);
+    if (index !== -1) {
+      cart.splice(index, 1); // Eliminar del carrito
+      e.target.parentElement.parentElement.remove(); // Eliminar fila de la tabla
+    }
+    actualizarTotal(); // Actualizar total después de eliminar
+    guardarCarritoEnLocalStorage(); // Actualizar localStorage después de eliminar
   }
 }
 
@@ -103,32 +95,45 @@ function vaciarCarrito() {
   while (lista.firstChild) {
     lista.removeChild(lista.firstChild);
   }
-  cart = [];
-  actualizarTotal();
-  // Vaciar carrito en localStorage
-  localStorage.removeItem('carrito');
-  return false;
+  cart = []; // Reiniciar carrito
+  actualizarTotal(); // Actualizar total
+  localStorage.removeItem('carrito'); // Limpiar localStorage
 }
 
 function actualizarTotal() {
   let total = 0;
   cart.forEach((item) => {
-    const precio = item.precio.replace('$', '').replace('.', '').replace(',', '.');
+    const precioString = item.precio.replace('$', '').replace('.', '').replace(',', '.');
+    const precio = parseFloat(precioString);
     if (!isNaN(precio)) {
-      total += parseFloat(precio) / 1;
+      total += precio * item.cantidad; // Calcular total
     }
   });
   const totalFormateado = total.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2, style: 'currency', currency: 'ARS' });
-  totalCarrito.textContent = `Total: ${totalFormateado}`;
+  totalCarrito.textContent = `Total: ${totalFormateado}`; // Mostrar total formateado
+}
+
+function leerDatosElemento(elemento) {
+  return {
+    imagen: elemento.querySelector('img').src,
+    titulo: elemento.querySelector('h3').textContent,
+    precio: elemento.querySelector('.price').textContent,
+    id: elemento.querySelector('.agregar-al-carrito').getAttribute('data-id'), // Obtener ID desde el botón
+  };
+}
+
+function guardarCarritoEnLocalStorage() {
+  localStorage.setItem('carrito', JSON.stringify(cart)); // Guardar carrito en localStorage
+}
+
+function obtenerCarrito() {
+  return JSON.parse(localStorage.getItem('carrito')) || []; // Obtener carrito del localStorage o arreglo vacío
 }
 
 function cargarCarritoDesdeLocalStorage() {
-  const carritoLocalStorage = obtenerCarrito();
-  carritoLocalStorage.forEach((producto) => {
-    insertarCarrito(producto);
+  cart = obtenerCarrito(); // Cargar carrito desde localStorage
+  cart.forEach((producto) => {
+    insertarCarrito(producto); // Insertar productos en la tabla
   });
-  actualizarTotal(); // Call actualizarTotal here
+  actualizarTotal(); // Actualizar total al cargar
 }
-
-// Call cargarCarritoDesdeLocalStorage when the page loads
-document.addEventListener('DOMContentLoaded', cargarCarritoDesdeLocalStorage);
